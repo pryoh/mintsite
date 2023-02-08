@@ -276,7 +276,7 @@ export const MintNFTs = ({ onClusterChange }) => {
         <div className={styles.container}>
           <h1 className={styles.title}>Traders Anonymous</h1>
           <div className={styles.nftForm}>
-            <button onClick={onClick} disabled={disableMint}>
+            <button onClick={onClick}>
               mint
             </button>
           </div>
