@@ -1,11 +1,10 @@
 import styles from "../styles/Home.module.css";
 import { useMemo, useState, useEffect } from "react";
 import {
-  ConnectionContext,
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import { WalletAdapterconnection } from "@solana/wallet-adapter-base";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import {
   GlowWalletAdapter,
   PhantomWalletAdapter,
@@ -22,21 +21,20 @@ import { MetaplexProvider } from "../MetaplexProvider";
 import { MintNFTs } from "../MintNFTs";
 import "@solana/wallet-adapter-react-ui/styles.css";
 import dynamic from 'next/dynamic';
-import { Connection } from "@solana/web3.js";
 
 export default function Home() {
-  const endpoint = new Connection("https://rpc.ankr.com/solana/ab3d69663445a9118d34f47f65a40788a22cbff0f2e925e9ea63aa38c6453968", "confirmed");
-  
+  const network = "https://rpc.ankr.com/solana/ab3d69663445a9118d34f47f65a40788a22cbff0f2e925e9ea63aa38c6453968";
+  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
       new GlowWalletAdapter(),
       new SlopeWalletAdapter(),
-      new SolflareWalletAdapter({ connection }),
+      new SolflareWalletAdapter({ network }),
       new TorusWalletAdapter(),
     ],
-    [connection]
+    [network]
   );
 
 
