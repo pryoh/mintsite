@@ -274,22 +274,12 @@ export const MintNFTs = ({ onClusterChange }) => {
       <div>
         <div className={styles.container}>
           <h1 className={styles.title}>Traders Anonymous</h1>
-          <div className={styles.nftForm}>
             <button onClick={onClick}>
               mint
             </button>
           </div>
-          {nft && (
-            <div className={styles.nftPreview}>
-              <h1>{nft.name}</h1>
-              <img
-                src={nft?.json?.image || "/fallbackImage.jpg"}
-                alt="The downloaded illustration of the provided NFT address."
-              />
-            </div>
-          )}
+          
         </div>
       </div>
-    </div>
   );
 };

@@ -19,15 +19,15 @@ h1 {
   font-size: 5rem;
   font-weight: 500;
   color: black;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   position: relative;
+  font-family: "My Underwood", sans-serif;
 }
 
 button {
   background-color: white;
   color: black;
   border: none;
-  padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
   font-size: 1.5rem;
   font-weight: 500;
@@ -35,10 +35,15 @@ button {
   transition: all 0.3s ease;
   margin: 0 auto;
   display: block;
-  
+  font-family: "My Underwood", sans-serif;
 }
 
 button:hover {
-  background-color: black;
+  background-color: #121212  ;
   color: white;
+}
+
+@font-face {
+  font-family: "My Underwood";
+  src: url(MyUnderwood.ttf);
 }
