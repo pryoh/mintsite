@@ -4,7 +4,7 @@ import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import { WalletAdaptersolanaConnection } from "@solana/wallet-adapter-base";
 import {
   GlowWalletAdapter,
   PhantomWalletAdapter,
@@ -23,18 +23,17 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import dynamic from 'next/dynamic';
 
 export default function Home() {
-  const network = "https://rpc.ankr.com/solana/ab3d69663445a9118d34f47f65a40788a22cbff0f2e925e9ea63aa38c6453968";
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const solanaConnection = new solanaWeb3.Connection("https://rpc.ankr.com/solana/ab3d69663445a9118d34f47f65a40788a22cbff0f2e925e9ea63aa38c6453968");
 
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
       new GlowWalletAdapter(),
       new SlopeWalletAdapter(),
-      new SolflareWalletAdapter({ network }),
+      new SolflareWalletAdapter({ solanaConnection }),
       new TorusWalletAdapter(),
     ],
-    [network]
+    [solanaConnection]
   );
 
 
@@ -45,7 +44,7 @@ export default function Home() {
 
   return (
     <div>
-      <ConnectionProvider endpoint={endpoint}>
+      <ConnectionProvider solanaConnection={solanaConnection}>
         <WalletProvider wallets={wallets} autoConnect>
           <WalletModalProvider>
             <MetaplexProvider>
