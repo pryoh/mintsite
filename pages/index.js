@@ -24,7 +24,7 @@ import dynamic from 'next/dynamic';
 
 export default function Home() {
   const network = WalletAdapterNetwork.Mainnet;
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const endpoint = useMemo(() => process.env.NEXT_PUBLIC_RPC_URL);
 
   const wallets = useMemo(
     () => [
