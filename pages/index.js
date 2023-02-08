@@ -26,7 +26,7 @@ import { solanaWeb3 } from "@solana/web3.js";
 
 export default function Home() {
   const connection = new Connection("https://rpc.ankr.com/solana/ab3d69663445a9118d34f47f65a40788a22cbff0f2e925e9ea63aa38c6453968", "confirmed");
-  const solanaConnection = new solanaWeb3.Connection;
+  const solanaConnection = new solanaWeb3.connection;
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
