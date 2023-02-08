@@ -5,7 +5,7 @@ import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import { WalletAdapterconnection } from "@solana/wallet-adapter-base";
 import {
   GlowWalletAdapter,
   PhantomWalletAdapter,
@@ -26,17 +26,17 @@ import { Connection } from "@solana/web3.js";
 
 export default function Home() {
   const endpoint = new Connection("https://rpc.ankr.com/solana/ab3d69663445a9118d34f47f65a40788a22cbff0f2e925e9ea63aa38c6453968", "confirmed");
-  const network = WalletAdapterNetwork.Mainnet;
+  
 
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
       new GlowWalletAdapter(),
       new SlopeWalletAdapter(),
-      new SolflareWalletAdapter({ network }),
+      new SolflareWalletAdapter({ connection }),
       new TorusWalletAdapter(),
     ],
-    [network]
+    [connection]
   );
 
 
