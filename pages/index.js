@@ -21,11 +21,12 @@ import { MetaplexProvider } from "../MetaplexProvider";
 import { MintNFTs } from "../MintNFTs";
 import "@solana/wallet-adapter-react-ui/styles.css";
 import dynamic from 'next/dynamic';
-import solanaWeb3 from "@solana/web3.js";
+import { Connection } from "@solana/web3.js";
+import { solanaWeb3 } from "@solana/web3.js";
 
 export default function Home() {
-  const solanaConnection = new solanaWeb3.Connection("https://rpc.ankr.com/solana/ab3d69663445a9118d34f47f65a40788a22cbff0f2e925e9ea63aa38c6453968");
-
+  const connection = new Connection("https://rpc.ankr.com/solana/ab3d69663445a9118d34f47f65a40788a22cbff0f2e925e9ea63aa38c6453968", "confirmed");
+  const solanaConnection = new solanaWeb3.Connection;
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
