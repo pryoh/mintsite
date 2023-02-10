@@ -10,7 +10,7 @@ export const MintNFTs = ({ onClusterChange }) => {
 
   const [nft, setNft] = useState(null);
 
-  const [disableMint, setDisableMint] = useState(false);
+  const [disableMint, setDisableMint] = useState(true);
 
   const candyMachineAddress = new PublicKey(process.env.NEXT_PUBLIC_CANDY_MACHINE_ID);
 
