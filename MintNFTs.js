@@ -274,11 +274,8 @@ export const MintNFTs = ({ onClusterChange }) => {
       <div>
         <div className={styles.container}>
           <h1 className={styles.title}>Traders Anonymous</h1>
-            <button onClick={onClick} disabled={disableMint}>
-              come back soon
-            </button>
+            <button onClick={onClick}> begin upload... </button>
           </div>
-          
         </div>
       </div>
   );
