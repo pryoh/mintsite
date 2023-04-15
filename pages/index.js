@@ -14,9 +14,7 @@ import {
 } from "@solana/wallet-adapter-wallets";
 import {
   WalletModalProvider,
-  WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
-import { clusterApiUrl } from "@solana/web3.js";
 import { MetaplexProvider } from "../MetaplexProvider";
 import { MintNFTs } from "../MintNFTs";
 import "@solana/wallet-adapter-react-ui/styles.css";

@@ -31,3 +31,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# candy machine files
+/candy-machine/
+/candy-machine-ui/
