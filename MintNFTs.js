@@ -10,7 +10,7 @@ export const MintNFTs = ({ onClusterChange }) => {
 
   const [nft, setNft] = useState(null);
 
-  const [disableMint, setDisableMint] = useState(true);
+  const [disableMint, setDisableMint] = useState(false); // disable mint button by default
 
   const candyMachineAddress = new PublicKey(process.env.NEXT_PUBLIC_CANDY_MACHINE_ID);
 
@@ -275,7 +275,7 @@ export const MintNFTs = ({ onClusterChange }) => {
         <div className={styles.container}>
           <h1 className={styles.title}>Traders Anonymous</h1>
             <button onClick={onClick}>
-              begin upload...
+              test your fate
             </button>
           </div>
         </div>
