@@ -1,4 +1,4 @@
-import styles from "./styles/Home.module.css";
+"use client"
 import { useMetaplex } from "./useMetaplex";
 import { useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
@@ -270,15 +270,13 @@ export const MintNFTs = ({ onClusterChange }) => {
   };
 
   return (
-    <div>
-      <div>
-        <div className={styles.container}>
-          <h1 className={styles.title}>Traders Anonymous</h1>
-            <button onClick={onClick}>
-              test your fate
-            </button>
-          </div>
-        </div>
-      </div>
+    <div className="flex flex-col justify-center items-center h-screen" style={{fontFamily: "MyUnderwood, sans-serif"}}>
+      <button
+        onClick={onClick} // Make sure you define the onClick function in your component
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+      >
+        Mint a Ticket
+      </button>
+    </div>
   );
 };
